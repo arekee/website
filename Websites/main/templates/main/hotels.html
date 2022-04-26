@@ -1,0 +1,453 @@
+{% extends 'main/base.html' %}
+{% load static %}
+{% block title %}
+Hotels
+{% endblock %}
+
+{% block content %}
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotels</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<style>
+    :root{
+    --Playfair: 'Playfair Display', serif;
+    --Quicksand: 'Quicksand', sans-serif;
+    --Roboto: 'Roboto', sans-serif;
+    --dark: #3c393d;
+    --exDark: #2b2b2b;
+}
+*{
+    padding: 0;
+    margin: 0;
+    font-family: var(--Quicksand);
+}
+body{
+    line-height: 1.4;
+    color:hsl(100, 150, 100);
+}
+img{
+    width: 100%;
+    display: block;
+}
+.container{
+    max-width: 1320px;
+    margin: 0 auto;
+    padding: 0 1.2rem;
+}
+#header2{
+    min-height: 100vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(main.jpeg) center/cover no-repeat fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content: stretch;
+}
+
+.text{
+    background-image: url("travel1.jpeg");
+    background-size: cover;
+}
+.banner{
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #fff;
+    background-image: url("bao.jpg");
+    background-size: cover;
+}
+.banner-title{
+    font-size: 3rem;
+    font-family: var(--Playfair);
+    line-height: 1.2;
+}
+.banner-title span{
+    font-family: var(--Playfair);
+    color: white;
+}
+.banner p{
+    padding: 1rem 0 2rem 0;
+    font-size: 1.2rem;
+    text-transform: capitalize;
+    font-family: var(--Roboto);
+    font-weight: 300;
+    word-spacing: 2px;
+}
+.banner form{
+    background: #fff;
+    border-radius: 2rem;
+    padding: 0.6rem 1rem;
+    display: flex;
+    justify-content: space-between;
+}
+.search-input{
+    font-family: var(--Roboto);
+    font-size: 1.1rem;
+    width: 100%;
+    outline: 0;
+    padding: 0.6rem 0;
+    border: none;
+}
+.search-input::placeholder{
+    text-transform: capitalize;
+}
+.search-btn{
+    width: 40px;
+    font-size: 1.1rem;
+    color: var(--dark);
+    border: none;
+    background: transparent;
+    outline: 0;
+    cursor: pointer;
+}
+.design{
+    padding: 4.5rem 0;
+}
+.title{
+    text-align: center;
+    padding: 1rem 0;
+}
+.title h2{
+    font-family: var(--Playfair);
+    font-size: 2.4rem;
+}
+.title p{
+    text-transform: uppercase;
+    padding: 0.6rem 0;
+}
+
+.design-item{
+    cursor: pointer;
+    margin: 1.5rem 0;
+}
+.design-img{
+    position: relative;
+    overflow: hidden;
+}
+.design-img::after{
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3);
+}
+.design-img img{
+    transition:  all 0.5s ease;
+}
+.design-item:hover img{
+    transform: scale(1.2);
+}
+.design-img span:first-of-type{
+    position: absolute;
+    z-index: 1;
+    top: 10px;
+    left: 10px;
+    background: var(--exDark);
+    color: #fff;
+    padding: 0.25rem 1rem;
+}
+.design-img span:last-of-type{
+    position: absolute;
+    z-index: 1;
+    bottom: 10px;
+    right: 10px;
+    color: #fff;
+    font-weight: 700;
+    font-size: 1.1rem;
+}
+.design-title{
+    padding: 1rem;
+    font-size: 1.2rem;
+    text-align: center;
+    width: 70%;
+    margin: 0 auto;
+}
+.design-title a{
+    color: var(--dark);
+    text-decoration: none;
+    text-transform: capitalize;
+    font-family: var(--Playfair);
+}
+
+.blog{
+    background: #f9f9f9;
+    padding: 4.5rem 0;
+}
+.blog-content{
+    margin: 2rem 0;
+}
+.blog-img{
+    position: relative;
+
+}
+.blog-img span{
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    background: var(--exDark);
+    color: #fff;
+    font-size: 1.4rem;
+    padding: 0.3rem 0.6rem;
+}
+.blog-text{
+    margin: 2.2rem 0;
+    padding: 0 1rem;
+}
+.blog-text span{
+    font-weight: 300;
+    display: block;
+    padding-bottom: 0.5rem;
+}
+.blog-text h2{
+    font-family: var(--Playfair);
+    text-transform: uppercase;
+    padding: 1rem 0;
+    font-size: 1.65rem;
+    font-weight: 500;
+}
+.blog-text p{
+    font-weight: 300;
+    font-size: 1.1rem;
+    opacity: 0.9;
+    padding-bottom: 1.2rem;
+}
+.blog-text a{
+    font-family: var(--Roboto);
+    font-size: 1.1rem;
+    text-decoration: none;
+    color: var(--dark);
+    display: inline-block;
+    background: var(--dark);
+    color: #fff;
+    padding: 0.55rem 1.2rem;
+    transition: all 0.5s ease;
+}
+.blog-text a:hover{
+    background: var(--exDark);
+}
+.about{
+    padding: 4.5rem 0;
+}
+.about-text{
+    margin: 2rem 0;
+}
+.about-text > p{
+    font-size: 1.1rem;
+    padding: 0.6rem 0;
+    opacity: 0.8;
+}
+footer{
+    background: var(--exDark);
+    color: #fff;
+    text-align: center;
+    padding: 2rem 0;
+}
+.social-links{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1.4rem;
+}
+.social-links a{
+    border: 2px solid white;
+    color: white;
+    display: block;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    text-decoration: none;
+    margin: 0 0.3rem;
+    transition: all 0.5s ease;
+}
+
+
+.social-links a:hover{
+    background: white;
+    color: var(--exDark);
+}
+.footer span{
+    margin-top: 1rem;
+    display: block;
+    font-family: var(--Playfair);
+    letter-spacing: 2px;
+}
+
+@media screen and (min-width: 540px){
+    .navbar-nav a{
+        padding-right: 1.2rem;
+        padding-left: 1.2rem;
+    }
+    .banner-title{
+        font-size: 5rem;
+    }
+    .banner form{
+        margin-top: 1.4rem;
+        width: 80%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@media screen and (min-width: 768px){
+    .navbar .container{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .search-input{
+        padding: 0.8rem 0;
+    }
+    .design-content{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+    }
+    .design-item{
+        margin: 0;
+    }
+    .blog-content{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+    }
+}
+
+@media screen and (min-width: 992px){
+    .blog-content{
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .about-content{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 3rem;
+        align-items: center;
+    }
+}
+
+@media screen and (min-width: 1200px){
+
+}
+
+img{
+     height: 278.6px;
+}
+</style>
+<body>
+
+
+
+  <header id="header2">
+    <div class = "banner">
+      <div class = "container">
+        <h1 class = "banner-title">
+          <span> Hotel </span>
+        </h1>
+        <p>don't be tourist, be a traveller</p>
+        <form>
+          <input type = "text" class = "search-input" placeholder="find your paradise . . .">
+          <button type = "submit" class = "search-btn">
+            <i class = "fas fa-search"></i>
+          </button>
+        </form>
+      </div>
+    </div>
+  </header>
+
+
+    <div class = "blog-content">
+      <div class = "blog-item">
+        <div class = "blog-img">
+<img src="{% static 'main/images/hotel1.jpeg' %}" alt="My image">
+
+        </div>
+        <div class = "blog-text">
+            {{form.name}}
+          <span>25 December 2021</span>
+          <h2>Ritz-Carlton</h2>
+          <p>Этот роскошный 5-звездочный отель расположен в Алматы, у подножия гор Алатау. К услугам гостей спа-центр, крытый бассейн и фитнес-центр. В отеле Ritz-Carlton, Almaty предоставляется бесплатный Wi-Fi.
+             Просторные номера оформлены в теплых тонах и оснащены кондиционером. В каждом элегантном номере среди удобств телевизор с плоским экраном и мраморная ванная комната с тропическим душем. </p>
+        </div>
+      </div>
+
+      <div class = "blog-item">
+        <div class = "blog-img">
+<img src="{% static 'main/images/hotel2.jpeg' %}" alt="My image">
+
+        </div>
+        <div class = "blog-text">
+          <span>25 December 2021</span>
+          <h2>Swissotel Wellness Resort</h2>
+          <p>Курортный отель Swissôtel Wellness Alatau Almaty расположен в Алма-Ате, в 20 км от спортивного комплекса «Медео». К услугам гостей ресторан, бесплатная частная парковка, фитнес-центр и бар. В этом 5-звездочном отеле имеется общий лаундж, организована доставка еды и напитков в номер. Стойка регистрации открыта круглосуточно, гости могут искупаться в крытом бассейне и попариться в хаммаме.</p>
+
+        </div>
+      </div>
+      <div class = "blog-item">
+        <div class = "blog-img">
+<img src="{% static 'main/images/hotel3.jpeg' %}" alt="My image">
+
+        </div>
+        <div class = "blog-text">
+          <span>25 December 2021</span>
+          <h2>Rahat Palas Hotel</h2>
+          <p>Этот 5-звездочный отель расположен в 200 метрах от Цирка Алматы и Центрального стадиона. К услугам гостей бесплатная парковка, номера с панорамным видом и спа-центр с крытым подогреваемым бассейном.
+            Номера отеля Rahat Palace оформлены в классическом стиле. Они имеют кабельное телевидение, мини-бар и балкон с видом на город или горы Алатау. В ванных комнатах имеются туалетно-косметические принадлежности и фен.</p>
+        </div>
+        </div>
+
+
+    <div class = "blog-item">
+      <div class = "blog-img">
+<img src="{% static 'main/images/hotel4.jpeg' %}" alt="My image">
+
+      </div>
+      <div class = "blog-text">
+        <span>25 December 2021  </span>
+        <h2>DoubleTree Hotel</h2>
+        <p>Отель Doubletree by Hilton Almaty расположен в центре города Алматы. К услугам гостей ресторан, круглосуточная стойка регистрации и бесплатный Wi-Fi. Осуществляется доставка еды и напитков в номер. К услугам гостей спа-салон и оздоровительный центр с крытым бассейном, а также сауна и бар.
+           Все номера оснащены кондиционером, телевизором с плоским экраном и спутниковыми каналами, чайником, ванной или душем, феном и шкафом.</p>
+
+      </div>
+    </div>
+
+    <div class = "blog-item">
+      <div class = "blog-img">
+<img src="{% static 'main/images/hotel5.jpeg' %}" alt="My image">
+
+      </div>
+      <div class = "blog-text">
+        <span>25 December 2021</span>
+        <h2>Rixos Almaty</h2>
+        <p>Этот роскошный 5-звездочный отель расположен в центре города Алматы, в 1 км от Никольского собора. К услугам гостей отеля Rixos Almaty современные номера с бесплатным WiFi и спа-салон с бассейном.
+            Во всех номерах Rixos Almaty есть кондиционер, рабочий стол и балкон с прекрасным видом. В ванной комнате установлена ванна и душ. </p>
+
+      </div>
+    </div>
+    <div class = "blog-item">
+      <div class = "blog-img">
+<img src="{% static 'main/images/hotel6.jfif' %}" alt="My image">
+
+      </div>
+      <div class = "blog-text">
+        <span>25 December 2021</span>
+        <h2>Donatello</h2>
+        <p>Бутик-отель с собственной сауной и лаундж-баром находится в Алматы, в 10 минутах езды от Дворца Республики. В номерах с дизайнерским интерьером предоставляется бесплатный Wi-Fi.
+          Все стильные номера бутик-отеля Donatello имеют современный декор и оснащены телевизором с плоским экраном и кондиционером. </p>
+
+      </div>
+    </div>
+    </div>
+
+</body>
+
+{% endblock %}

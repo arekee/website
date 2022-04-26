@@ -1,0 +1,156 @@
+* {
+	box-sizing: border-box;
+	margin:0;
+	padding: 0;
+
+}
+li,a,button{
+	font-family:A;
+	font-weight:500;
+	font-size:16px;
+	color:#edf0f1;
+	text-decoration: none;
+}
+header{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 30px 10%;
+}
+.nav-links{
+	list-style:none;
+}
+.nav-links li{
+	display: inline-block;
+	padding: 0px 20xp;
+}
+.nav-links li a {
+margin-left: 10px;
+	transition: all 0.3s ease 0s;
+}
+.nav-links li a:hover {
+color: #0088a9
+}
+button{
+	padding: 9px 25px;
+	background-color: rgba(0,136,169,1);
+	border:none;
+	border-radius: 50px;
+	transition: all 0.3s ease 0s;
+	cursor: pointer;
+}
+button:hover{
+	background-color: rgba(0,136,169,1);
+}
+.drop {
+  background-color: #04AA6D;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {background-color: #ddd;}
+
+.dropdown:hover .dropdown-content {display: block;}
+
+.dropdown:hover .dropbtn {background-color: #3e8e41;}
+#h1{
+	font-family: 'Lato', sans-serif;
+}
+
+#p{
+	font-family: 'Roboto', sans-serif;
+
+}
+
+
+#head{
+	clear: both;
+	background-color: black;
+	color: white;
+	padding: 5px;
+	text-align: center;
+}
+
+#navv{
+	float: left;
+	background-color: #eeeeee;
+	height: 30em;
+	width: 15%;
+	text-align: center;
+	line-height: 50px;
+	padding: 5px;
+	font-family: 'Roboto', sans-serif;
+
+}
+
+.li{
+	list-style-type: none;
+	text-decoration: none;
+}
+
+.a{
+	text-decoration: none;
+	color: black;
+}
+
+.a:hover{
+	color: white;
+
+	background-color: black;
+	padding-left: 35%;
+	padding-right: 35%;
+	padding-top: 5%;
+	padding-bottom: 5%;
+}
+
+section{
+	width: 75%;
+	padding: 20px;
+	float: left;
+	margin-left: 10px;
+	margin-top: 10px;
+}
+
+section h1{
+	margin-bottom: 20px;
+}
+
+#photo{
+	float:right; margin-left:10px;
+}
+     .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }

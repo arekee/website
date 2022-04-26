@@ -1,0 +1,12 @@
+{% extends 'main/main.html' %}
+{% block content %}
+<form method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    {% for field in upload_form %}
+    {{ field.label }}<br>
+    {{ field }}<br>
+    {% endfor %}
+
+<button type="submit">Add</button>
+</form>
+{% endblock %}

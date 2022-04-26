@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div class="features">
+        <h1> Form for signing up</h1>
+        <form method="post">
+            {% csrf_token %}
+            {{form.name}}<br>
+            {{form.fullname}}<br>
+            {{form.phone}}<br>
+            {{form.email}}<br>
+            {{form.birthdate}}<br>
+            {{form.password}}<br>
+            <span>{{error}}</span>
+            <input type="text" placeholder="Username" class="form-control"><br>
+            <input type="email" placeholder="Email" class="form-control"><br>
+            <input type="tel" placeholder="Phone number" class="form-control"><br>
+            <input type="date" placeholder="Date of birth" class="form-control"><br>
+            <input type="password" placeholder="Password" class="form-control"><br>
+            <button class="btn btn-success" type="submit">Sign-up</button>
+        </form>
+    </div>
+
+</body>
+</html>

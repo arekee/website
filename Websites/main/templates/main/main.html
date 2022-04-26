@@ -1,0 +1,172 @@
+{% extends 'main/base.html' %}
+{% load static %}
+{% load main_extras %}
+{% block title %}
+
+Main page
+{% endblock %}
+
+{% block content %}
+<head>
+</head>
+<main>
+
+
+    {% getcoms filter=1 %}
+
+
+
+  <section class="py-5 text-center container">
+    <div class="row py-lg-5">
+      <div class="col-lg-6 col-md-8 mx-auto">
+        <h1 class="fw-light" class="id">Explore Kazakhstan!</h1>
+        <p class="lead text-muted">Kazakhstan, a Central Asian country and former Soviet republic, extends from the Caspian Sea in the west to the Altai Mountains at its eastern border with China and Russia. Its largest metropolis, Almaty, is a long-standing trading hub whose landmarks include Ascension Cathedral, a tsarist-era Russian Orthodox church, and the Central State Museum of Kazakhstan.</p>
+        <p>
+          <a href="#" class="btn btn-primary my-2">Explore</a>
+          <a href="#" class="btn btn-secondary my-2">Buy</a>
+        </p>
+
+
+      </div>
+    </div>
+  </section>
+
+  <div class="album py-5 bg-light">
+    <div class="container">
+
+
+
+      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+        <div class="col">
+          <div class="card shadow-sm">
+<img src="{% static 'main/images/almaty.jpg' %}" alt="My image" width="360" height="220">
+
+            <div class="card-body">
+              <p class="card-text">Almaty, Kazakhstan's largest metropolis, is set in the foothills of the Trans-Ili Alatau mountains. It served as the country's capital until 1997 and remains Kazakhstan's trading and cultural hub.</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-sm btn-outline-primary">View</button>
+                  <button type="button" class="btn btn-sm btn-outline-success">Buy</button>
+                </div>
+                <small class="text-muted">$400</small>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card shadow-sm">
+<img src="{% static 'main/images/astana.jpg' %}" alt="My image" width="360" height="220">
+
+            <div class="card-body">
+              <p class="card-text">Nur-Sultan, originally known as Akmolinsk, Tselinograd, and most recently Astana, is the capital city of Kazakhstan. The city acquired its present name on 23 March 2019, following a unanimous vote in Kazakhstan's parliament.</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-sm btn-outline-primary">View</button>
+                  <button type="button" class="btn btn-sm btn-outline-success">Buy</button>
+                </div>
+                <small class="text-muted">$330</small>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card shadow-sm">
+            <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
+
+            <div class="card-body">
+              <p class="card-text">Shymkent, known until 1993 as Chimkent; Russian: Чимкент, romanized: Chimkent, is a city in Kazakhstan. It is near the border with Uzbekistan. It is one of three Kazakh cities which have the status equal.</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-sm btn-outline-primary">View</button>
+                  <button type="button" class="btn btn-sm btn-outline-success">Buy</button>
+                </div>
+                <small class="text-muted">$320</small>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="card shadow-sm">
+<img src="{% static 'main/images/turkistan.jpg' %}" alt="My image" width="360" height="220">
+
+            <div class="card-body">
+              <p class="card-text">Turkistan, is a city and the administrative center of Turkistan Region of Kazakhstan, near the Syr Darya river. It is situated 160 km north-west of Shymkent on the Trans-Aral Railway between Kyzylorda to the north and Tashkent to the south.</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-sm btn-outline-primary">View</button>
+                  <button type="button" class="btn btn-sm btn-outline-success">Buy</button>
+                </div>
+                <small class="text-muted">$500</small>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card shadow-sm">
+<img src="{% static 'main/images/shymbulak.jpg' %}" alt="My image" width="360" height="220">
+
+            <div class="card-body">
+              <p class="card-text">Shumbulak (Kazakh: Şymbūlaq, Cyrillic: Шымбұлақ), also known as Chimbulak (Russian: Чимбулак, Kyrgyz: Чымбулак) is a ski resort near Almaty. It is the largest ski resort in Central Asia. It is located in the upper part of the Medeu Valley in the Zailiisky. </p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-sm btn-outline-primary">View</button>
+                  <button type="button" class="btn btn-sm btn-outline-success">Buy</button>
+                </div>
+                <small class="text-muted">$450</small>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card shadow-sm">
+<img src="{% static 'main/images/kaspi.jpg' %}" alt="My image" width="360" height="220">
+
+            <div class="card-body">
+              <p class="card-text">Aktau is a city in Kazakhstan, located on the eastern shore of the Caspian Sea. Its current name means "white mountain" in Kazakh, which may be due to its cliffs that overlook the Caspian.</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-sm btn-outline-primary">View</button>
+                  <button type="button" class="btn btn-sm btn-outline-success">Buy</button>
+                </div>
+                <small class="text-muted">$350</small>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+  </div>
+
+<div class="container mt-5">
+    <div class="row d-flex justify-content-center">
+        <div class="col-md-8">
+            <div class="headings d-flex justify-content-between align-items-center mb-3">
+                <h5>Comments</h5>
+
+            </div>
+              <a href="{% url 'add-comment' %}"><button type="button" class="btn btn-light">Add comments</button></a>
+
+
+          {% for c in comments %}
+            <div class="card p-3">
+                <div class="d-flex justify-content-between align-items-center">
+                    <div class="user d-flex flex-row align-items-center"> <img src="https://i.imgur.com/hczKIze.jpg" width="30" class="user-img rounded-circle mr-2"> <span><small class="font-weight-bold text-primary">{{c.nickname}}</small> <small class="font-weight-bold">{{c.comment}}</small></span> </div> <small></small>
+                </div>
+                <div class="action d-flex justify-content-between mt-2 align-items-center">
+                    <div class="reply px-4"> <a href="update/{{ c.id }}" class="btn btn-warning" id="comment.id">edit</a> <span class="dots"></span> <a href="delete/{{c.id}}" class="btn btn-danger" id="comment.id">delete</a> <span class="dots"></span> </div>
+                    <div class="icons align-items-center"> <i class="fa fa-star text-warning"></i> <i class="fa fa-check-circle-o check-icon"></i> </div>
+                </div>
+            </div>
+          {% endfor %}
+
+        </div>
+    </div>
+</div>
+  </main>
+
+
+{{tasks}}
+{% endblock %}

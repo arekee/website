@@ -1,0 +1,62 @@
+{% extends 'main/base.html' %}
+{% load static %}
+{% block title %}
+Main page
+{% endblock %}
+
+{% block content %}
+<head>
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="{% static 'main/css/styles.css' %}">
+</head>
+<body>
+
+<header id="head">
+    <h1 id="h1">Places you must visit!</h1>
+  </header>
+
+  <nav id="navv">
+    <li class="li"><a class="a" href="#" id="koktobe" onClick="changeImage(this.id)">Koktobe</a></li>
+    <li class="li"><a class="a" href="#" id="shymbulak" onClick="changeImage(this.id)">Shymbulak</a></li>
+    <li class="li"><a class="a" href="#" id="esentaimall" onClick="changeImage(this.id)">Esentaimall</a></li>
+  </nav>
+
+  <section>
+    <h1 id="title" class="text-3xl font-bold underline">Koktobe</h1>
+    <img id="photo" src="{% static 'main/images/koktobe.jpg' %}" width="40%">
+    <p id="intro">
+      Koktobe is the capital city of England. It is the most populous city in the United Kingdom,
+      with a metropolitan area of over 13 million inhabitants. Although the city is a center of European commerce, many shops are closed on Sundays, leaving time for lazy brunches or shopping excursions at a local market.
+    </p>
+  </section>
+
+
+  <script>
+    function changeImage(clicked_id){
+
+
+	var title = "";
+	var new_img = "";
+	var new_p = "";
+	if ("shymbulak" == clicked_id){
+		title ="Shymbulak";
+		new_img =  'static/main/images/shymbulak.jpg';
+		p = " Shymbulak information.";
+	} else if("esentaimall" == clicked_id){
+		title ="Esentai mall";
+		new_img = "static/main/images/esentaimall.jpg";
+		p = "Esentai mall information."
+	} else if("koktobe" == clicked_id){
+		title ="Koktobe";
+		new_img = "static/main/images/koktobe.jpg";
+		p = "Koktobe informationLondinium."
+	}
+	document.getElementById("title").innerHTML = title;
+	document.getElementById("photo").src = new_img;
+	document.getElementById("intro").innerHTML = p;
+}
+  </script>
+</body>
+
+{% endblock %}
